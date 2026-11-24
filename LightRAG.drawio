@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Страница-1" id="SmT2eux7sma_JtvQ3tDE">
-    <mxGraphModel dx="4637" dy="1845" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="4161" dy="1551" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -212,7 +212,7 @@
           <mxGeometry height="325" width="430" x="820" y="975" as="geometry" />
         </mxCell>
         <mxCell id="WrTDcAN2iTQWK-d_IRSW-48" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontSize=16;" value="На данном шаге:&lt;div&gt;&lt;ul&gt;&lt;li&gt;описания сущностей и связей векторизованы и сохранены в Vector DB Storage&lt;/li&gt;&lt;li&gt;все сущности и связи записаны в графовую базу данных&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;Это и позволяет искать одновременно: по тексту чанков, по именам и описаниям сущностей, а также по ключевым словам и описаниям самих отношений (идея гибридного индекса)&lt;/div&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="235" width="430" x="1270" y="1030" as="geometry" />
+          <mxGeometry height="235" width="430" x="910" y="1325" as="geometry" />
         </mxCell>
         <mxCell id="WrTDcAN2iTQWK-d_IRSW-49" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=13;fontColor=#16294D;align=center;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Извлечение из документов сущностей и отношений&lt;/h1&gt;" vertex="1">
           <mxGeometry height="124" width="330" x="-450" y="330" as="geometry" />
@@ -285,6 +285,15 @@
         </mxCell>
         <mxCell id="WrTDcAN2iTQWK-d_IRSW-77" edge="1" parent="1" source="rTkv0_UGOf3wEzf9HFxA-10" style="edgeStyle=orthogonalEdgeStyle;shape=connector;curved=0;rounded=1;sketch=1;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;labelPadding=0 4;startSize=8;endArrow=blockThin;endFill=1;endSize=8;" target="WrTDcAN2iTQWK-d_IRSW-73">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WrTDcAN2iTQWK-d_IRSW-79" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontSize=16;" value="В векторную БД сохраняются вектора с описанием связей между сущностями, которые соединяют исходные и целевые сущности по их идентификаторам&amp;nbsp;&amp;nbsp;" vertex="1">
+          <mxGeometry height="235" width="430" x="650" y="1540" as="geometry" />
+        </mxCell>
+        <mxCell id="WrTDcAN2iTQWK-d_IRSW-80" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;rounded=0;fontSize=16;" value="В векторную БД сохраняются вектора с описанием сущностей, извлеченных из текстовых фрагментов, с уникальным идентификатором, названием сущности..&amp;nbsp;&amp;nbsp;" vertex="1">
+          <mxGeometry height="235" width="430" x="-270" y="1540" as="geometry" />
+        </mxCell>
+        <mxCell id="WrTDcAN2iTQWK-d_IRSW-81" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontSize=16;" value="Сохранение созданного индекса графа" vertex="1">
+          <mxGeometry height="40" width="310" x="277" y="1268" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
