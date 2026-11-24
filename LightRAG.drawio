@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Страница-1" id="SmT2eux7sma_JtvQ3tDE">
-    <mxGraphModel dx="2557" dy="1070" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="4637" dy="1845" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -187,8 +187,8 @@
         <mxCell id="WrTDcAN2iTQWK-d_IRSW-39" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontSize=16;" value="Документы проходят стандартную предобработку: разбивка на чанки (по умолчанию размер чанков – 1200 токенов с перекрытием – 100 токенов) с последующей векторизацией. Полученные эмбеддинги автоматически сохраняются в Vector DB Storage" vertex="1">
           <mxGeometry height="135" width="430" x="1050" y="178" as="geometry" />
         </mxCell>
-        <mxCell id="WrTDcAN2iTQWK-d_IRSW-41" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontSize=16;" value="LLM извлекает из чанков сущности (Entities) – узлы будущего графа, и отношения (Relations) между ними – связи между сущностями, который сформируют ребра будущего графа." vertex="1">
-          <mxGeometry height="135" width="430" x="800" y="350" as="geometry" />
+        <mxCell id="WrTDcAN2iTQWK-d_IRSW-41" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontSize=16;" value="LLM извлекает из каждого чанка сущности (Entities) – узлы будущего графа, и отношения (Relations) между ними – связи между сущностями, который сформируют ребра будущего графа.&lt;div&gt;Сущность становится кандидатом в узел графа, отношение — кандидатом в ребро. Вместе с ними формируются текстовые описания&lt;/div&gt;" vertex="1">
+          <mxGeometry height="150" width="430" x="800" y="330" as="geometry" />
         </mxCell>
         <mxCell id="WrTDcAN2iTQWK-d_IRSW-42" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontSize=16;" value="&lt;div&gt;Существует предзаданная типизация сущностей. По умолчанию используется универсальный перечень из 11 категорий:&lt;/div&gt;&lt;div&gt;&lt;i&gt;&lt;b&gt;Person, Creature, Organization, Location, Event, Concept, Method, Content, Data, Artifact, NaturalObject&lt;/b&gt;&lt;/i&gt;&lt;/div&gt;&lt;div&gt;Все, что не попало в этот список, относится к категории&lt;b style=&quot;font-style: italic;&quot;&gt; Other.&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Если работать со специфическим доменом,&amp;nbsp;можно переопределить и задать собственную нативную таксономию.&lt;/div&gt;" vertex="1">
           <mxGeometry height="135" width="819" x="1241" y="344" as="geometry" />
@@ -203,22 +203,22 @@
           <mxGeometry height="410" width="430" x="1430" y="512" as="geometry" />
         </mxCell>
         <mxCell id="WrTDcAN2iTQWK-d_IRSW-45" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=13;fontColor=#16294D;align=center;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Профилирование сущностей и связей&lt;/h1&gt;" vertex="1">
-          <mxGeometry height="60" width="330" x="-230" y="640" as="geometry" />
+          <mxGeometry height="60" width="330" x="-450" y="647.5" as="geometry" />
         </mxCell>
         <mxCell id="WrTDcAN2iTQWK-d_IRSW-46" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=13;fontColor=#16294D;align=center;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Дедупликация&lt;/h1&gt;" vertex="1">
-          <mxGeometry height="60" width="330" x="-230" y="1060" as="geometry" />
+          <mxGeometry height="60" width="330" x="-450" y="1050" as="geometry" />
         </mxCell>
-        <mxCell id="WrTDcAN2iTQWK-d_IRSW-47" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontSize=16;" value="Явные дубликаты сущностей автоматически объединяются в единые узлы с сохранением ранее построенных отношений.&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;С помощью LLM формируется единое подробное описание каждой сущности и каждой связи, агрегирующее информацию из всех чанков, где они встретились.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Автоматическая дедупликация работает только с явными дубликатами – узлами с точным совпадением имен&lt;/div&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="240" width="430" x="826" y="1030" as="geometry" />
+        <mxCell id="WrTDcAN2iTQWK-d_IRSW-47" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontSize=16;" value="Явные дубликаты сущностей автоматически объединяются в единые узлы с сохранением ранее построенных отношений.&amp;nbsp;Повторы объединяются, а информация об объекте агрегируется в его описании. Аналогично объединяются повторяющиеся отношения.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;С помощью LLM формируется единое подробное описание каждой сущности и каждой связи, агрегирующее информацию из всех чанков, где они встретились.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Автоматическая дедупликация работает только с явными дубликатами – узлами с точным совпадением имен&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="325" width="430" x="820" y="975" as="geometry" />
         </mxCell>
         <mxCell id="WrTDcAN2iTQWK-d_IRSW-48" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontSize=16;" value="На данном шаге:&lt;div&gt;&lt;ul&gt;&lt;li&gt;описания сущностей и связей векторизованы и сохранены в Vector DB Storage&lt;/li&gt;&lt;li&gt;все сущности и связи записаны в графовую базу данных&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;Это и позволяет искать одновременно: по тексту чанков, по именам и описаниям сущностей, а также по ключевым словам и описаниям самих отношений (идея гибридного индекса)&lt;/div&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="235" width="430" x="1270" y="1030" as="geometry" />
         </mxCell>
         <mxCell id="WrTDcAN2iTQWK-d_IRSW-49" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=13;fontColor=#16294D;align=center;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Извлечение из документов сущностей и отношений&lt;/h1&gt;" vertex="1">
-          <mxGeometry height="124" width="330" x="-260" y="320" as="geometry" />
+          <mxGeometry height="124" width="330" x="-450" y="330" as="geometry" />
         </mxCell>
         <mxCell id="WrTDcAN2iTQWK-d_IRSW-51" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=13;fontColor=#16294D;align=center;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Создание графа и финальное сохранение&lt;/h1&gt;" vertex="1">
-          <mxGeometry height="90" width="330" x="-280" y="1220" as="geometry" />
+          <mxGeometry height="90" width="330" x="-450" y="1210" as="geometry" />
         </mxCell>
         <mxCell id="WrTDcAN2iTQWK-d_IRSW-65" edge="1" parent="1" source="WrTDcAN2iTQWK-d_IRSW-52" style="edgeStyle=orthogonalEdgeStyle;shape=connector;curved=0;rounded=1;sketch=1;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;labelPadding=0 4;startSize=8;endArrow=blockThin;endFill=1;endSize=8;" target="WrTDcAN2iTQWK-d_IRSW-63">
           <mxGeometry relative="1" as="geometry" />
@@ -272,6 +272,18 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="WrTDcAN2iTQWK-d_IRSW-71" edge="1" parent="1" source="WrTDcAN2iTQWK-d_IRSW-9" style="edgeStyle=orthogonalEdgeStyle;shape=connector;curved=0;rounded=1;sketch=1;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;labelPadding=0 4;startSize=8;endArrow=blockThin;endFill=1;endSize=8;" target="WrTDcAN2iTQWK-d_IRSW-69">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WrTDcAN2iTQWK-d_IRSW-73" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" value="KV и DOC Status&lt;div&gt;Storage&lt;/div&gt;" vertex="1">
+          <mxGeometry height="124" width="133" x="-100" y="178" as="geometry" />
+        </mxCell>
+        <mxCell id="WrTDcAN2iTQWK-d_IRSW-74" edge="1" parent="1" source="rTkv0_UGOf3wEzf9HFxA-4" style="edgeStyle=orthogonalEdgeStyle;shape=connector;curved=0;rounded=1;sketch=1;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;labelPadding=0 4;startSize=8;endArrow=blockThin;endFill=1;endSize=8;" target="WrTDcAN2iTQWK-d_IRSW-73">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WrTDcAN2iTQWK-d_IRSW-75" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontSize=16;" value="&amp;nbsp;в KV Storage запишется:&lt;div&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;text_chunks &lt;/b&gt;-&amp;nbsp;Сразу после разбиения документа на чанки, до LLM-извлечения: Текст каждого чанка, его размер, порядковый номер, ID родительского документа и другие метаданные.&lt;/li&gt;&lt;li&gt;&lt;b&gt;llm_response_cache&amp;nbsp;&lt;/b&gt;-&amp;nbsp;После каждого LLM-вызова при извлечении сущностей и отношений:&amp;nbsp;Сырой ответ модели по чанку: извлечённые сущности, отношения, их описания; используется как кеш, чтобы не повторять одинаковые LLM-запросы.&lt;/li&gt;&lt;li&gt;&lt;b&gt;doc_status &lt;/b&gt;-&amp;nbsp; В нём LightRAG отслеживает жизненный цикл документа: принят, обрабатывается, обработан, ошибка, частично обработан&lt;/li&gt;&lt;li&gt;&lt;b&gt;full_docs &lt;/b&gt;- на этапе индексации после приема документа: Полный исходный документ и его ID&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="135" width="1080" x="-840" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WrTDcAN2iTQWK-d_IRSW-77" edge="1" parent="1" source="rTkv0_UGOf3wEzf9HFxA-10" style="edgeStyle=orthogonalEdgeStyle;shape=connector;curved=0;rounded=1;sketch=1;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;labelBackgroundColor=default;defaultLabelBackgroundColor=page;labelPadding=0 4;startSize=8;endArrow=blockThin;endFill=1;endSize=8;" target="WrTDcAN2iTQWK-d_IRSW-73">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
